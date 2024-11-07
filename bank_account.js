@@ -13,22 +13,48 @@ function atm() {
     let account = {
         accountName: "Name Surname",
     };
+
     let balance = 100;
+   
 
     function getBalance() {
-        console.log(balance);
+       console.log (`Your balance is ${balance}.`);
+        nextAction();
+        return balance;
+
     }
 
     function deposit() {
         let amount = parseFloat
-            (prompt(`Write the amout that you want to deposit`)
-            );
-
-            let sum = getBalance() + amount;
-            console.log(sum);
-
+            (prompt(`Write the amout that you want to deposit`));
+        while (isNaN(amount) || amount <= 0) {
+            amount = parseFloat(prompt("Please enter a valid number greater than 0."));
+        }
+        let newBalance = balance + amount;
+        balance = newBalance;
+        console.log (`New balance: ${newBalance}.`);
+        nextAction();
+        return newBalance;
 
     }
+
+    function nextAction() {
+        const action = prompt(
+            `What would you want to do next?
+            1. Go back on beginning
+            2. Exit`);
+
+        if (action === `1`) {
+            atm();
+        } else if (action === `2`) {
+            alert(`Thank you for using ATM. Goodbye`);
+
+        } else {
+            prompt(`Invalid choice. Try again.
+                     ${action}`);
+        }
+    }
+
 
     switch (message) {
         case 1:
