@@ -6,6 +6,11 @@ let account = {
     balance: 100,
 };
 
+function getAccountName(){
+    alert(account.accountName);
+    nextAction();
+}
+
 function getBalance() {
     alert(`Your balance is ${account.balance}.`);
     nextAction();
@@ -77,6 +82,13 @@ function nextAction() {
     }
 }
 
+function exitAccount(){
+    account.accountName=``;
+    account.balance=0;
+    alert (`User is not in the system anymore`);
+    nextAction();
+}
+
 function atm() {
     const message = parseFloat(
         prompt(
@@ -101,10 +113,10 @@ function atm() {
             withdrawal();
             break;
         case 4:
-            alert(account.accountName);
-            nextAction();
+            getAccountName();
             break;
         case 5:
+            exitAccount()
     }
 }
 
