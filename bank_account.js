@@ -18,7 +18,7 @@ function atm() {
    
 
     function getBalance() {
-       console.log (`Your balance is ${balance}.`);
+       alert (`Your balance is ${balance}.`);
         nextAction();
         return balance;
 
