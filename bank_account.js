@@ -6,7 +6,7 @@ let account = {
     balance: 100,
 };
 
-function getAccountName(){
+function getAccountName() {
     alert(account.accountName);
     nextAction();
 }
@@ -82,10 +82,10 @@ function nextAction() {
     }
 }
 
-function exitAccount(){
-    account.accountName=``;
-    account.balance=0;
-    alert (`User is not in the system anymore`);
+function exitAccount() {
+    account.accountName = ``;
+    account.balance = 0;
+    alert(`User is not in the system anymore`);
     nextAction();
 }
 
@@ -117,6 +117,9 @@ function atm() {
             break;
         case 5:
             exitAccount()
+            break;
+        default: atm();
+        break;
     }
 }
 
